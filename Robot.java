@@ -1,5 +1,3 @@
-
-
 public class Robot {
 	
 
@@ -58,10 +56,28 @@ public class Robot {
 			this.eje = this.eje + 1;
 		}
 	}
-
 	
+	public boolean VerificarDerecha(){
+		return false;
+	}
+	
+	public boolean BuscarPared(){
+		return false;
+	}
+	
+
 	public void mover(){
+		if(eje == 1){
+			this.cordenadaX = this.cordenadaX+1;
+		}if(eje == 2){
+			this.cordenadaY = this.cordenadaY+1;
+		}if(eje == 3){
+			this.cordenadaX = this.cordenadaX-1;
+		}else{
+			this.cordenadaY = this.cordenadaY-1;
+		}
 		
 	}
 
 }
+
