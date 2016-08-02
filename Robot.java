@@ -1,9 +1,13 @@
+
+
 public class Robot {
 	
 
 	private int eje; //1, 2, 3, 4,
 	private int cordenadaX;
 	private int cordenadaY; 
+	private Laberinto laberinto= new Laberinto();
+	
 	
 	/**
 	 *Constructor  
@@ -42,42 +46,118 @@ public class Robot {
 	
 	/*Metodos */
 	public void GirarIzquierda(){
-		if(this.eje == 1){
-			this.eje = 4;
+		if(eje == 1){
+			eje = 4;
 		}else{
-			this.eje = this.eje - 1;
+			eje = eje - 1;
 		}
 	}
 	
 	public void GirarDerecha(){
-		if(this.eje == 4){
-			this.eje = 1;
+		if(eje == 4){
+			eje = 1;
 		}else{
-			this.eje = this.eje + 1;
+			eje = eje + 1;
 		}
 	}
-	
-	public boolean VerificarDerecha(){
-		return false;
-	}
-	
-	public boolean BuscarPared(){
-		return false;
-	}
-	
 
+	
 	public void mover(){
-		if(eje == 1){
-			this.cordenadaX = this.cordenadaX+1;
-		}if(eje == 2){
-			this.cordenadaY = this.cordenadaY+1;
-		}if(eje == 3){
-			this.cordenadaX = this.cordenadaX-1;
-		}else{
-			this.cordenadaY = this.cordenadaY-1;
+		if(eje==1)
+		{
+			cordenadaX=cordenadaX+1;
+		}
+		if(eje==2)
+		{
+			cordenadaY=cordenadaY+1;
+		}
+		if(eje==3)
+		{
+			cordenadaX=cordenadaX-1;
+		}
+		if(eje==4)
+		{
+			cordenadaY=cordenadaY-1;
 		}
 		
 	}
+	
+	public boolean pared(){
+		boolean pared=false;
+		if(eje==1)
+		{
+			if(laberinto.getT()[cordenadaX+1][cordenadaY] == '-' /*o == pared*/){
+				pared=true;
+			}
+		}
+		if(eje==2)
+		{
+			if(laberinto.getT()[cordenadaX][cordenadaY+1] == '-' /*o == pared*/){
+				pared=true;
+			}
+		}
+		if(eje==3)
+		{
+			if(laberinto.getT()[cordenadaX-1][cordenadaY] == '-' /*o == pared*/){
+				pared=true;
+			}
+		}
+		if(eje==4)
+		{
+			if(laberinto.getT()[cordenadaX][cordenadaY-1] == '-' /*o == pared*/){
+				pared=true;
+			}
+		}
+		return pared;
+	}
+	
+	public boolean verificarD(){
+		boolean puedo=true;
+		if(eje==1)
+		{
+			if(laberinto.getT()[cordenadaX][cordenadaY-1] == '-' /*o == pared*/){
+				puedo=false;
+			}
+		}
+		if(eje==2)
+		{
+			if(laberinto.getT()[cordenadaX-1][cordenadaY] == '-' /*o == pared*/){
+				puedo=false;
+			}
+		}
+		if(eje==3)
+		{
+			if(laberinto.getT()[cordenadaX][cordenadaY+1] == '-' /*o == pared*/){
+				puedo=false;
+			}
+		}
+		if(eje==4)
+		{
+			if(laberinto.getT()[cordenadaX+1][cordenadaY] == '-' /*o == pared*/){
+				puedo=false;
+			}
+		}
+		return puedo;
+	}
+	
+	public void avanzar()
+	{
+		if (verificarD()==true)
+		{
+			GirarDerecha();
+			mover();
+		}
+		else
+		{
+			while(pared()==true)
+			{
+				GirarIzquierda();
+			}
+			if(pared()==false)
+			{
+				mover();
+			}
+		}
+	}
 
 }
-
