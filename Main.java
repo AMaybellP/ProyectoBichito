@@ -10,7 +10,7 @@ public class Main {
 		System.out.println("-------------------El 2 es el robot, 1 pared y 0 camino-------------------");
 		System.out.println("------------------------------------inicio--------------------------------");
 		
-		while(bichito.getCordenadaX()!=bichito.getLaberinto().getXf() && bichito.getCordenadaY()!=bichito.getLaberinto().getYf())
+		while(bichito.getCordenadaX()!=bichito.getLaberinto().getXf() || bichito.getCordenadaY()!=bichito.getLaberinto().getYf())
 		{
 			//System.out.println("Eje: "+bichito.getEje()+"   X: "+bichito.getCordenadaX()+"   Y: "+bichito.getCordenadaY());
 			bichito.avanzar();
