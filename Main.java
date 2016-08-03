@@ -5,7 +5,10 @@ public class Main {
 	{
 		Robot bichito= new Robot();
 		
-		System.out.println("--inicio--");
+		System.out.println("--------------------------------------------------------------------------");
+		System.out.println("------------Bienvenido, veras como el robot sale del laberinto------------");
+		System.out.println("-------------------El 2 es el robot, 1 pared y 0 camino-------------------");
+		System.out.println("------------------------------------inicio--------------------------------");
 		
 		while(bichito.getCordenadaX()!=bichito.getLaberinto().getXf() && bichito.getCordenadaY()!=bichito.getLaberinto().getYf())
 		{
