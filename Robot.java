@@ -167,15 +167,7 @@ public class Robot {
 			GirarDerecha();
 			System.out.println("avanzo");
 			mover();
-			for (int x=0; x < 10; x++) {
-	  			System.out.print("|");
-	  			for (int y=0; y < 10; y++) {
-	  				int p = (int)laberinto.getT()[x][y];
-	  				System.out.print (p);
-	  				if (y!=9) System.out.print("\t");
-	  			}				
-	  			System.out.println("|");
-			}
+		
 		}
 		else
 		{
