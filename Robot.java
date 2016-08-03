@@ -79,7 +79,7 @@ public class Robot {
   				}else{
   				System.out.print (p);}
   				//El numero se debe cambiar por el tamaño de fila menos 1
-  				if (y!=9) System.out.print("\t");
+  				if (y!=7) System.out.print("\t");
   			}				
   			System.out.println("|");
 		}
