@@ -23,7 +23,7 @@ public class Main {
 				Thread.currentThread().interrupt();
 			}
 		}
-		System.out.println("--fin--");
+		System.out.println("-------------------------------------Fin!--------------------------------");
 		
 		
 	}
