@@ -1,3 +1,5 @@
+
+
 public class Robot {
 	
 
@@ -68,6 +70,18 @@ public class Robot {
 
 	
 	public void mover(){
+		for (int x=0; x < 10; x++) {
+  			System.out.print("|");
+  			for (int y=0; y < 10; y++) {
+  				int p = (int)laberinto.getT()[x][y];
+  				if(x == getCordenadaY() && y == getCordenadaX()){
+  					System.out.print (222);
+  				}else{
+  				System.out.print (p);}
+  				if (y!=9) System.out.print("\t");
+  			}				
+  			System.out.println("|");
+		}
 		if(eje==1)
 		{
 			cordenadaX=cordenadaX+1;
@@ -149,20 +163,15 @@ public class Robot {
 	{
 		if (verificarD()==true)
 		{
-			System.out.println("\ngiro derecha");
+			System.out.println("giro derecha");
 			GirarDerecha();
 			System.out.println("avanzo");
 			mover();
-			//laberinto.setT()[cordenadaX][cordenadaY]=2;
-			for (int x=0; x < 10; x++) {	//Imprimir matriz
+			for (int x=0; x < 10; x++) {
 	  			System.out.print("|");
 	  			for (int y=0; y < 10; y++) {
 	  				int p = (int)laberinto.getT()[x][y];
-	  				if(y == getCordenadaX() && x == getCordenadaY()){
-  						System.out.print (2+" ");
-  					}else{
-  						System.out.print (p+" ");
-  					}
+	  				System.out.print (p);
 	  				if (y!=9) System.out.print("\t");
 	  			}				
 	  			System.out.println("|");
@@ -172,41 +181,19 @@ public class Robot {
 		{
 			while(pared()==true)
 			{
-				System.out.println("\ngiro izquierda");
+				System.out.println("giro izquierda");
 				GirarIzquierda();
-				for (int x=0; x < 10; x++) {	//Imprimir matriz
-	  				System.out.print("|");
-	  				for (int y=0; y < 10; y++) {
-	  				int p = (int)laberinto.getT()[x][y];
-	  				if(y == getCordenadaX() && x == getCordenadaY()){
-  						System.out.print (2+" ");
-  					}else{
-  						System.out.print (p+" ");
-  					}
-	  				if (y!=9) System.out.print("\t");
-	  				}				
-	  			System.out.println("|");
-				}
+				
 			}
 			if(pared()==false)
 			{
-				System.out.println("\navanzo");
+				System.out.println("avanzo");
 				mover();
-				for (int x=0; x < 10; x++) {
-	  				System.out.print("|");
-	  				for (int y=0; y < 10; y++) {
-	  				int p = (int)laberinto.getT()[x][y];
-	  				if(y == getCordenadaX() && x == getCordenadaY()){
-  						System.out.print (2+" ");
-  					}else{
-  						System.out.print (p+" ");
-  					}
-	  				if (y!=9) System.out.print("\t");
-	  				}				
-	  				System.out.println("|");
-				}
+				
 			}
 		}
 	}
 
 }
+
+
