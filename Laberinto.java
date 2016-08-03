@@ -4,18 +4,19 @@ import java.lang.reflect.Array;
 public class Laberinto {
 
 	//private char[][] T = new char[10][10];
-	private Object[][] T = new Object[10][10];
+	//Se deben cambiar coordenadas de X y Y final e inicial, y la dimension segun el laberinto
+	private Object[][] T = new Object[8][8];
 	private int xi= 1;
-	private int yi= 1;
-	private int xf= 9;
-	private int yf= 9;
+	private int yi= 2;
+	private int xf= 3;
+	private int yf= 7;
 	
 	
 	
 
 	public Laberinto(/*int a, int b*/){
 		
-		T[0]= new Object[] {1,1,1,1,1,1,1,1,1,1};
+	/*	T[0]= new Object[] {1,1,1,1,1,1,1,1,1,1};
 		T[1]= new Object[] {0,0,0,0,0,0,0,0,0,1};
 		T[2]= new Object[] {1,0,1,1,1,0,1,1,0,1};
 		T[3]= new Object[] {1,0,1,1,1,0,1,1,0,1};
@@ -24,7 +25,7 @@ public class Laberinto {
 		T[6]= new Object[] {1,0,1,1,0,1,0,1,1,1};
 		T[7]= new Object[] {1,0,1,1,0,1,0,0,0,1};
 		T[8]= new Object[] {1,0,0,0,0,1,1,1,0,1};
-		T[9]= new Object[] {1,1,1,1,1,1,1,1,0,1};
+		T[9]= new Object[] {1,1,1,1,1,1,1,1,0,1};*/
 		/**
 		 * 
 		 * private int xf= 18;
@@ -62,7 +63,7 @@ public class Laberinto {
 	T[5]= new Object[] {1,1,1,1,0,1,1,1};
 	*/
 	
-	/* Object[8][8] inicio(0,3) fin(5,0)
+	//Object[8][8] inicio(0,3) fin(5,0)
 	T[0]= new Object[] {1,1,1,1,1,1,1,1};
 	T[1]= new Object[] {1,0,1,0,0,0,0,1};
 	T[2]= new Object[] {0,0,0,0,1,1,0,1};
@@ -71,7 +72,7 @@ public class Laberinto {
 	T[5]= new Object[] {1,1,1,1,1,0,1,1};
 	T[6]= new Object[] {1,0,0,0,0,0,0,1};
 	T[7]= new Object[] {1,1,1,0,1,1,1,1};
-	*/
+	
 	
 	/* Object[8][14] inicio(2,7) fin(8,7)
 	T[0]= new Object[] {1,1,1,1,1,1,1,1};
