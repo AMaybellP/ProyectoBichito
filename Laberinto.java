@@ -1,4 +1,9 @@
-
+/**
+*Laberinto. Clase que contiene el o los laberintos que el robot debe superar
+*@version: 1.0
+*@author: Gladys de La Roca, 15755 // Jackeline Hidalgo, 15776 // Steven Rubio, 15044 // Andrea Pena, 15127
+*@since 2016-08-03
+*/
 import java.lang.reflect.Array;
 
 public class Laberinto {
