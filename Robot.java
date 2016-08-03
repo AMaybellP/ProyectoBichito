@@ -68,16 +68,17 @@ public class Robot {
 		}
 	}
 
-	
+	//Se deben cambiar los maximos de X y Y, segun la dimension del laberinto
 	public void mover(){
-		for (int x=0; x < 10; x++) {
+		for (int x=0; x < 8; x++) {
   			System.out.print("|");
-  			for (int y=0; y < 10; y++) {
+  			for (int y=0; y < 8; y++) {
   				int p = (int)laberinto.getT()[x][y];
   				if(x == getCordenadaY() && y == getCordenadaX()){
   					System.out.print (222);
   				}else{
   				System.out.print (p);}
+  				//El numero se debe cambiar por el tamaño de fila menos 1
   				if (y!=9) System.out.print("\t");
   			}				
   			System.out.println("|");
