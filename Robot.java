@@ -8,14 +8,14 @@ public class Robot {
 	private int cordenadaY; 
 	private Laberinto laberinto= new Laberinto();
 	
-	
+
 	/**
 	 *Constructor  
 	 */
-	public Robot(int a, int b){
-		this.setCordenadaX(a);
-		this.setCordenadaY(b);
-		this.setEje(0);
+	public Robot(){
+		this.setCordenadaX(laberinto.getXi());
+		this.setCordenadaY(laberinto.getYi());
+		this.setEje(1);
 	}
 	/**
 	 *
@@ -43,13 +43,20 @@ public class Robot {
 	public void setCordenadaX(int cordenadaX) {
 		this.cordenadaX = cordenadaX;
 	}
+	public Laberinto getLaberinto() {
+		return laberinto;
+	}
+	public void setLaberinto(Laberinto laberinto) {
+		this.laberinto = laberinto;
+	}
+	
 	
 	/*Metodos */
 	public void GirarIzquierda(){
 		if(eje == 1){
-			eje = 4;
+			setEje(4);
 		}else{
-			eje = eje - 1;
+			setEje(eje-1);
 		}
 	}
 	
@@ -115,7 +122,7 @@ public class Robot {
 		boolean puedo=true;
 		if(eje==1)
 		{
-			if(laberinto.getT()[cordenadaX][cordenadaY-1] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaX][cordenadaY+1] == '-' /*o == pared*/){
 				puedo=false;
 			}
 		}
@@ -127,7 +134,7 @@ public class Robot {
 		}
 		if(eje==3)
 		{
-			if(laberinto.getT()[cordenadaX][cordenadaY+1] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaX][cordenadaY-1] == '-' /*o == pared*/){
 				puedo=false;
 			}
 		}
@@ -144,17 +151,21 @@ public class Robot {
 	{
 		if (verificarD()==true)
 		{
+			System.out.println("giro derecha");
 			GirarDerecha();
+			System.out.println("avanzo");
 			mover();
 		}
 		else
 		{
 			while(pared()==true)
 			{
+				System.out.println("giro izquierda");
 				GirarIzquierda();
 			}
 			if(pared()==false)
 			{
+				System.out.println("avanzo");
 				mover();
 			}
 		}
