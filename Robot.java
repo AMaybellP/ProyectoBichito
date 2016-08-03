@@ -149,15 +149,20 @@ public class Robot {
 	{
 		if (verificarD()==true)
 		{
-			System.out.println("giro derecha");
+			System.out.println("\ngiro derecha");
 			GirarDerecha();
 			System.out.println("avanzo");
 			mover();
-			for (int x=0; x < 10; x++) {
+			//laberinto.setT()[cordenadaX][cordenadaY]=2;
+			for (int x=0; x < 10; x++) {	//Imprimir matriz
 	  			System.out.print("|");
 	  			for (int y=0; y < 10; y++) {
 	  				int p = (int)laberinto.getT()[x][y];
-	  				System.out.print (p);
+	  				if(y == getCordenadaX() && x == getCordenadaY()){
+  						System.out.print (2+" ");
+  					}else{
+  						System.out.print (p+" ");
+  					}
 	  				if (y!=9) System.out.print("\t");
 	  			}				
 	  			System.out.println("|");
@@ -167,31 +172,39 @@ public class Robot {
 		{
 			while(pared()==true)
 			{
-				System.out.println("giro izquierda");
+				System.out.println("\ngiro izquierda");
 				GirarIzquierda();
-				for (int x=0; x < 10; x++) {
-	  			System.out.print("|");
-	  			for (int y=0; y < 10; y++) {
+				for (int x=0; x < 10; x++) {	//Imprimir matriz
+	  				System.out.print("|");
+	  				for (int y=0; y < 10; y++) {
 	  				int p = (int)laberinto.getT()[x][y];
-	  				System.out.print (p);
+	  				if(y == getCordenadaX() && x == getCordenadaY()){
+  						System.out.print (2+" ");
+  					}else{
+  						System.out.print (p+" ");
+  					}
 	  				if (y!=9) System.out.print("\t");
-	  			}				
+	  				}				
 	  			System.out.println("|");
-			}
+				}
 			}
 			if(pared()==false)
 			{
-				System.out.println("avanzo");
+				System.out.println("\navanzo");
 				mover();
 				for (int x=0; x < 10; x++) {
-	  			System.out.print("|");
-	  			for (int y=0; y < 10; y++) {
+	  				System.out.print("|");
+	  				for (int y=0; y < 10; y++) {
 	  				int p = (int)laberinto.getT()[x][y];
-	  				System.out.print (p);
+	  				if(y == getCordenadaX() && x == getCordenadaY()){
+  						System.out.print (2+" ");
+  					}else{
+  						System.out.print (p+" ");
+  					}
 	  				if (y!=9) System.out.print("\t");
-	  			}				
-	  			System.out.println("|");
-			}
+	  				}				
+	  				System.out.println("|");
+				}
 			}
 		}
 	}
