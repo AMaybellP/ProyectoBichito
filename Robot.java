@@ -93,25 +93,25 @@ public class Robot {
 		boolean pared=false;
 		if(eje==1)
 		{
-			if(laberinto.getT()[cordenadaX+1][cordenadaY] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY][cordenadaX+1] == 1 /*'-' o == pared*/){
 				pared=true;
 			}
 		}
 		if(eje==2)
 		{
-			if(laberinto.getT()[cordenadaX][cordenadaY+1] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY+1][cordenadaX] == 1 /*'-' o == pared*/){
 				pared=true;
 			}
 		}
 		if(eje==3)
 		{
-			if(laberinto.getT()[cordenadaX-1][cordenadaY] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY][cordenadaX-1] == 1 /*'-' o == pared*/){
 				pared=true;
 			}
 		}
 		if(eje==4)
 		{
-			if(laberinto.getT()[cordenadaX][cordenadaY-1] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY-1][cordenadaX] == 1 /*'-' o == pared*/){
 				pared=true;
 			}
 		}
@@ -122,25 +122,25 @@ public class Robot {
 		boolean puedo=true;
 		if(eje==1)
 		{
-			if(laberinto.getT()[cordenadaX][cordenadaY+1] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY+1][cordenadaX] == 1 /*'-' o == pared*/){
 				puedo=false;
 			}
 		}
 		if(eje==2)
 		{
-			if(laberinto.getT()[cordenadaX-1][cordenadaY] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY][cordenadaX-1] == 1 /*'-' o == pared*/){
 				puedo=false;
 			}
 		}
 		if(eje==3)
 		{
-			if(laberinto.getT()[cordenadaX][cordenadaY-1] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY-1][cordenadaX] == 1 /*'-' o == pared*/){
 				puedo=false;
 			}
 		}
 		if(eje==4)
 		{
-			if(laberinto.getT()[cordenadaX+1][cordenadaY] == '-' /*o == pared*/){
+			if(laberinto.getT()[cordenadaY][cordenadaX+1] == 1 /*'-' o == pared*/){
 				puedo=false;
 			}
 		}

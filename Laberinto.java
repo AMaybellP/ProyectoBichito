@@ -2,7 +2,8 @@ import java.lang.reflect.Array;
 
 public class Laberinto {
 
-	private char[][] T = new char[10][10];
+	//private char[][] T = new char[10][10];
+	private int[][] T = new int[10][10];
 	private int xi= 0;
 	private int yi= 1;
 	private int xf= 8;
@@ -13,7 +14,7 @@ public class Laberinto {
 
 	public Laberinto(/*int a, int b*/){
 		//this.setT(new char[9][9]);
-		T[0]= new char[] {'-','-','-','-','-','-','-','-','-','-'};
+		/*T[0]= new char[] {'-','-','-','-','-','-','-','-','-','-'};
 		T[1]= new char[] {' ',' ',' ',' ',' ',' ',' ',' ',' ','-'};
 		T[2]= new char[] {'-',' ','-','-','-',' ','-','-',' ','-'};
 		T[3]= new char[] {'-',' ','-','-','-',' ','-','-',' ','-'};
@@ -22,7 +23,17 @@ public class Laberinto {
 		T[6]= new char[] {'-',' ','-','-',' ','-',' ','-','-','-'};
 		T[7]= new char[] {'-',' ','-','-',' ','-',' ',' ',' ','-'};
 		T[8]= new char[] {'-',' ',' ',' ',' ','-','-','-',' ','-'};
-		T[9]= new char[] {'-','-','-','-','-','-','-','-',' ','-'};
+		T[9]= new char[] {'-','-','-','-','-','-','-','-',' ','-'};*/
+		T[0]= new int[] {1,1,1,1,1,1,1,1,1,1};
+		T[1]= new int[] {0,0,0,0,0,0,0,0,0,1};
+		T[2]= new int[] {1,0,1,1,1,0,1,1,0,1};
+		T[3]= new int[] {1,0,1,1,1,0,1,1,0,1};
+		T[4]= new int[] {1,0,0,0,0,0,0,1,0,1};
+		T[5]= new int[] {1,1,1,1,0,1,0,1,0,1};
+		T[6]= new int[] {1,0,1,1,0,1,0,1,1,1};
+		T[7]= new int[] {1,0,1,1,0,1,0,0,0,1};
+		T[8]= new int[] {1,0,0,0,0,1,1,1,0,1};
+		T[9]= new int[] {1,1,1,1,1,1,1,1,0,1};
 	}
 
 
@@ -65,11 +76,11 @@ public class Laberinto {
 		this.yf = yf;
 	}
 
-	public char[][] getT() {
+	public /*char*/int[][] getT() {
 		return T;
 	}
 
-	public void setT(char[][] t) {
+	public void setT(/*char*/int[][] t) {
 		T = t;
 	}	
 		
