@@ -1,174 +1,87 @@
 
 
-public class Robot {
+public class Laberinto {
+
+	//private char[][] T = new char[10][10];
+	private Object[][] T = new Object[10][10];
+	private int xi= 0;
+	private int yi= 1;
+	private int xf= 8;
+	private int yf= 9;
+	
+	
 	
 
-	private int eje; //1, 2, 3, 4,
-	private int cordenadaX;
-	private int cordenadaY; 
-	private Laberinto laberinto= new Laberinto();
-	
-
-	/**
-	 *Constructor  
-	 */
-	public Robot(){
-		this.setCordenadaX(laberinto.getXi());
-		this.setCordenadaY(laberinto.getYi());
-		this.setEje(1);
-	}
-	/**
-	 *
-	 */
-	public int getEje() {
-		return eje;
+	public Laberinto(/*int a, int b*/){
+		
+		T[1]= new Object[] {0,0,0,0,0,0,0,0,0,1};
+		T[2]= new Object[] {1,0,1,1,1,0,1,1,0,1};
+		T[3]= new Object[] {1,0,1,1,1,0,1,1,0,1};
+		T[4]= new Object[] {1,0,0,0,0,0,0,1,0,1};
+		T[5]= new Object[] {1,1,1,1,0,1,0,1,0,1};
+		T[6]= new Object[] {1,0,1,1,0,1,0,1,1,1};
+		T[7]= new Object[] {1,0,1,1,0,1,0,0,0,1};
+		T[8]= new Object[] {1,0,0,0,0,1,1,1,0,1};
+		T[9]= new Object[] {1,1,1,1,1,1,1,1,0,1};
 	}
 
-	public void setEje(int eje) {
-		this.eje = eje;
+
+	public int getXi() {
+		return xi;
 	}
 
-	public int getCordenadaY() {
-		return cordenadaY;
+
+	public void setXi(int xi) {
+		this.xi = xi;
 	}
 
-	public void setCordenadaY(int cordenadaY) {
-		this.cordenadaY = cordenadaY;
+
+	public int getYi() {
+		return yi;
 	}
 
-	public int getCordenadaX() {
-		return cordenadaX;
+
+	public void setYi(int yi) {
+		this.yi = yi;
 	}
 
-	public void setCordenadaX(int cordenadaX) {
-		this.cordenadaX = cordenadaX;
+
+	public int getXf() {
+		return xf;
 	}
-	public Laberinto getLaberinto() {
-		return laberinto;
+
+
+	public void setXf(int xf) {
+		this.xf = xf;
 	}
-	public void setLaberinto(Laberinto laberinto) {
-		this.laberinto = laberinto;
+
+
+	public int getYf() {
+		return yf;
 	}
-	
+
+
+	public void setYf(int yf) {
+		this.yf = yf;
+	}
+
+	public /*char*/Object[][] getT() {
+		return T;
+	}
+
+	public void setT(/*char*/Object[][] t) {
+		T = t;
+	}	
+		
 	
 	/*Metodos */
-	public void GirarIzquierda(){
-		if(eje == 1){
-			setEje(4);
-		}else{
-			setEje(eje-1);
-		}
+	public boolean VerificarDerecha(){
+		return false;
 	}
 	
-	public void GirarDerecha(){
-		if(eje == 4){
-			eje = 1;
-		}else{
-			eje = eje + 1;
-		}
-	}
-
-	
-	public void mover(){
-		if(eje==1)
-		{
-			cordenadaX=cordenadaX+1;
-		}
-		if(eje==2)
-		{
-			cordenadaY=cordenadaY+1;
-		}
-		if(eje==3)
-		{
-			cordenadaX=cordenadaX-1;
-		}
-		if(eje==4)
-		{
-			cordenadaY=cordenadaY-1;
-		}
-		
+	public boolean BuscarPared(){
+		return false;
 	}
 	
-	public boolean pared(){
-		boolean pared=false;
-		if(eje==1)
-		{
-			if((int)laberinto.getT()[cordenadaY][cordenadaX+1] == 1 /*'-' o == pared*/){
-				pared=true;
-			}
-		}
-		if(eje==2)
-		{
-			if((int)laberinto.getT()[cordenadaY+1][cordenadaX] == 1 /*'-' o == pared*/){
-				pared=true;
-			}
-		}
-		if(eje==3)
-		{
-			if((int)laberinto.getT()[cordenadaY][cordenadaX-1] == 1 /*'-' o == pared*/){
-				pared=true;
-			}
-		}
-		if(eje==4)
-		{
-			if((int)laberinto.getT()[cordenadaY-1][cordenadaX] == 1 /*'-' o == pared*/){
-				pared=true;
-			}
-		}
-		return pared;
-	}
 	
-	public boolean verificarD(){
-		boolean puedo=true;
-		if(eje==1)
-		{
-			if((int)laberinto.getT()[cordenadaY+1][cordenadaX] == 1 /*'-' o == pared*/){
-				puedo=false;
-			}
-		}
-		if(eje==2)
-		{
-			if((int)laberinto.getT()[cordenadaY][cordenadaX-1] == 1 /*'-' o == pared*/){
-				puedo=false;
-			}
-		}
-		if(eje==3)
-		{
-			if((int)laberinto.getT()[cordenadaY-1][cordenadaX] == 1 /*'-' o == pared*/){
-				puedo=false;
-			}
-		}
-		if(eje==4)
-		{
-			if((int)laberinto.getT()[cordenadaY][cordenadaX+1] == 1 /*'-' o == pared*/){
-				puedo=false;
-			}
-		}
-		return puedo;
-	}
-	
-	public void avanzar()
-	{
-		if (verificarD()==true)
-		{
-			System.out.println("giro derecha");
-			GirarDerecha();
-			System.out.println("avanzo");
-			mover();
-		}
-		else
-		{
-			while(pared()==true)
-			{
-				System.out.println("giro izquierda");
-				GirarIzquierda();
-			}
-			if(pared()==false)
-			{
-				System.out.println("avanzo");
-				mover();
-			}
-		}
-	}
-
 }
