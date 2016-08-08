@@ -29,7 +29,35 @@ public class Main {
 				Thread.currentThread().interrupt();
 			}
 		}
-		System.out.println("-------------------------------------Fin!--------------------------------");
+		System.out.println("-------------------------------------------------------------------------");
+		for (int x=0; x < 10; x++) {
+  			System.out.print("|");
+  			for (int y=0; y < 10; y++) {
+  				int p = (int)bichito.getLaberinto().getT()[x][y];
+  				if(x == bichito.getCordenadaY() && y == bichito.getCordenadaX()){
+  					System.out.print (222);
+  				}else{
+  				System.out.print (p);}
+  				if (y!=9) System.out.print("\t");	
+  				}
+  			System.out.println("|");
+  			}
+		
+		System.out.println("-------------------------------------------------------------------------");
+		for (int x=0; x < 10; x++) {
+  			System.out.print("|");
+  			for (int y=0; y < 10; y++) {
+  				int p = (int)bichito.getLaberinto().getT()[x][y];
+  				if(x == bichito.getCordenadaY() && y == bichito.getCordenadaX()){
+  					System.out.print (p);
+  				}else{
+  				System.out.print (p);}
+  				if (y!=9) System.out.print("\t");	
+  			}
+  			System.out.println("|");
+  			}
+		
+		System.out.println("-------------------------------------Haz salido!------------------------------(222)");
 		
 		
 	}
