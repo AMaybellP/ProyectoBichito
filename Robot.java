@@ -10,7 +10,8 @@ public class Robot {
 
 	private int eje; //1, 2, 3, 4,
 	private int cordenadaX;
-	private int cordenadaY; 
+	private int cordenadaY;
+	private int pasos=0;
 	private Laberinto laberinto= new Laberinto();
 	
 
@@ -48,6 +49,12 @@ public class Robot {
 	public void setCordenadaX(int cordenadaX) {
 		this.cordenadaX = cordenadaX;
 	}
+	public int getPasos() {
+		return pasos;
+	}
+	public void setPasos(int pasos) {
+		this.pasos = pasos;
+	}
 	public Laberinto getLaberinto() {
 		return laberinto;
 	}
@@ -75,6 +82,8 @@ public class Robot {
 
 	//Se deben cambiar los maximos de X y Y, segun la dimension del laberinto
 	public void mover(){
+		pasos=pasos+1;
+		//System.out.println("PASOS: "+ pasos);
 		for (int x=0; x < 8; x++) {
   			System.out.print("|");
   			for (int y=0; y < 8; y++) {
@@ -106,6 +115,7 @@ public class Robot {
 		}
 		
 	}
+	
 	
 	public boolean pared(){
 		boolean pared=false;

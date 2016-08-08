@@ -15,9 +15,12 @@ public class Laberinto {
 	private int yi= 2;
 	private int xf= 3;
 	private int yf= 7;
+	private int dimx=8;
+	private int dimy=8;
 	
 	
 	
+
 
 	public Laberinto(/*int a, int b*/){
 		
@@ -163,6 +166,27 @@ public class Laberinto {
 	public void setYf(int yf) {
 		this.yf = yf;
 	}
+	
+
+	public int getDimx() {
+		return dimx;
+	}
+
+
+	public void setDimx(int dimx) {
+		this.dimx = dimx;
+	}
+
+
+	public int getDimy() {
+		return dimy;
+	}
+
+
+	public void setDimy(int dimy) {
+		this.dimy = dimy;
+	}
+
 
 	public Object[][] getT() {
 		return T;
