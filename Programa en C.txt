@@ -1,0 +1,29 @@
+
+
+#include "simpletools.h"                      // Include simpletools header
+#include "ping.h"   
+
+int main()                                    // main function
+{
+  while(1)                                    // Repeat indefinitely
+  {
+    int cmDist = ping_cm(15);                 //Imprime la distancia 
+    print("cmDist = %d\n", cmDist);          
+    
+	drive_goto(26, -25);						//Girar a la derecha
+	if(ping_cm(15)>=5){							//Verifica si hay pared
+		// Si no hay pared 
+		drive_goto(128, 128);					// Avanza dos giros
+	}else{
+		if(ping_cm(15)>=5){
+			drive_goto(26, -25);				// Regresa a su posicion original
+			drive_goto(26, -25);				// Gira a la izquierda
+		}else{
+			drive_goto(128, 128);					// Avanza dos giros
+		}
+	}
+		
+	
+	
+  }
+}
