@@ -1,4 +1,3 @@
-#include "simpletools.h"
 #include "abdrive.h"
 #include "ping.h"
 
@@ -8,13 +7,18 @@ int main()
 {
 	while(turn ==1){
 		//drive_rampStep(115,115);
-
+		if(ping_cm(8) < 10){ //Si esta cerca de una pared gira
+			drive_goto(26,-25);
 			if(ping_cm(8) < 10){
-				//while(ping_cm(8) < 10){
-					drive_goto(26,-25);
-					pause(10);
-				}else{
-      drive_goto(30,30);
+				drive_goto(52,-50);
+			}
+			else{
+				drive_goto(30,30); //Si no esta cerca de una pared, avanza 
+			}
+			pause(10);
+			}
+		else{
+			drive_goto(30,30); //Si no esta cerca de una pared, avanza 
     }      
         
 				/**int urn = rand() % 3;
