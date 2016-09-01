@@ -10,7 +10,7 @@ int main()
 		if(ping_cm(8) < 10){ //Si esta cerca de una pared gira
 			drive_goto(26,-25);
 			if(ping_cm(8) < 10){
-				drive_goto(52,-50);
+				drive_goto(-51,50);
 			}
 			else{
 				drive_goto(30,30); //Si no esta cerca de una pared, avanza 
