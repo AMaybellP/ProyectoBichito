@@ -7,34 +7,18 @@ int main()
 {
 	while(turn ==1){
 		//drive_rampStep(115,115);
-		if(ping_cm(8) < 10){ //Si esta cerca de una pared gira
-			drive_goto(26,-25);
+		if(ping_cm(8) < 11){ //Si esta cerca de una pared gira
+			drive_goto(28,-27);
 			if(ping_cm(8) < 10){
 				drive_goto(-51,50);
 			}
 			else{
-				drive_goto(30,30); //Si no esta cerca de una pared, avanza 
+				drive_goto(29,26); //Si no esta cerca de una pared, avanza (con correccion de torcido)
 			}
 			pause(10);
 			}
 		else{
-			drive_goto(30,30); //Si no esta cerca de una pared, avanza 
+			drive_goto(29,26); //Si no esta cerca de una pared, avanza 
     }      
-        
-				/**int urn = rand() % 3;
-				drive_goto(-60,60);
-				pause(250);
-				if(urn == 1){
-					drive_goto(26,-25);
-					pause(250);
-				}
-				else if(urn == 2){
-					drive_goto(-25,26);
-					pause(250);
-				}
-				else{
-					drive_goto(52,-52);
-					pause(250);
-				}*/
-			}
+	}
 	}
