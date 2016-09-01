@@ -1,0 +1,36 @@
+#include "simpletools.h"
+#include "abdrive.h"
+#include "ping.h"
+
+int turn = 1;
+
+int main()
+{
+	while(turn ==1){
+		//drive_rampStep(115,115);
+
+			if(ping_cm(8) < 10){
+				//while(ping_cm(8) < 10){
+					drive_goto(26,-25);
+					pause(10);
+				}else{
+      drive_goto(30,30);
+    }      
+        
+				/**int urn = rand() % 3;
+				drive_goto(-60,60);
+				pause(250);
+				if(urn == 1){
+					drive_goto(26,-25);
+					pause(250);
+				}
+				else if(urn == 2){
+					drive_goto(-25,26);
+					pause(250);
+				}
+				else{
+					drive_goto(52,-52);
+					pause(250);
+				}*/
+			}
+	}
