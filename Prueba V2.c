@@ -28,3 +28,16 @@ int main()
 	
 }
 
+/**
+ *  freqout(1, 1, 38000);                       // Repeat for right detector
+    irRight = input(2);
+    if(irRight == 0){   
+    print("Se detecta pared");
+    pause(5000);
+  }else{
+  print("No se detecta pared");
+  pause(5000);
+  }  
+ * 
+ * 
+ * /
