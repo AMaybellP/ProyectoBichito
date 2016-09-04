@@ -1,43 +1,36 @@
-#include "simpletools.h"
+*/
 #include "abdrive.h"
 #include "ping.h"
-
-int turn = 1;
-//Pin sensor frontal, 8
-//Pin sensor derecha, 9
-int main()
+int irRight;
+int main()                                    // Main function
 {
-	while(turn ==1){
-		//drive_rampStep(115,115);
-		if(ping_cm(9) > 11){ //no hay pared a la derecha
-            		drive_goto(28,-27);//girar derecha
-            		drive_goto(29,26); 
-			
-		}                            
-     /*if(ping_cm(8) > 10){ //no hay pared enfrente
-			drive_goto(29,26); 
-      }
-      else{
-      drive_goto(-28,27);} //girar izquierda
-      }*/
-     		else{
-        		drive_goto(-28,27);//girar izquierda
-        		}  
-		
-	} 
-	
-}
+  // Add startup code here.
 
-/**
- *  freqout(1, 1, 38000);                       // Repeat for right detector
+ 
+  while(1)
+  {
+    freqout(1, 1, 38000);                       // Repeat for right detector
     irRight = input(2);
-    if(irRight == 0){   
-    print("Se detecta pared");
-    pause(5000);
-  }else{
-  print("No se detecta pared");
-  pause(5000);
+    if(irRight == 1){ // Si no hay pared a la derecha
+      high(26);
+      high(27);
+      drive_goto(25,-26); //Gira derecha
+      drive_speed(0,0);
+      drive_goto(29,26);  //Avanza
+      low(26);
+      low(27);
+    }      
+    if(irRight == 0 && ping_cm(8)<13){    //Si hay pared a la derecha y enfrente 
+      
+      drive_speed(0,0);
+      drive_goto(-25,26); //Gira izquierda
+      pause(50); 
+     }else{ //Si no hay pared enfrente
+        drive_speed(32,32);
+        pause(50);
+    }
+
+     
+    
   }  
- * 
- * 
- * /
+}
