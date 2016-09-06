@@ -18,7 +18,7 @@ int main()                                    // Main function
     irRight = input(2);
    if(ping_cm(8)>50){ //Salida del laberinto 
        drive_speed(64,64);
-       pause (4000);
+       pause (3000);
      }
     if(irRight == 1){ // Si no hay pared a la derecha
       drive_speed(42,42); //Avanza
