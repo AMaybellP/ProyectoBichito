@@ -1,6 +1,6 @@
 /*Universidad del Valle de Guatemala
 Algoritmos y Estructura de Datos
-Proyecto 1. Grupo x
+Proyecto 1. Grupo 4
 Steven Rubio, Andrea Peña, Jackeline Hidalgo, Gladys de la Roca
 */
 
